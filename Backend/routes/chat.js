@@ -7,14 +7,14 @@ router.post("/", async (req, res) => {
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
   
-  const { messages } = req.body; // Accept conversation history
+  const { messages } = req.body; 
   
   if (!messages || !Array.isArray(messages)) {
     return res.status(400).json({ message: "Messages array is required" });
   }
 
   try {
-    // Construct the input from conversation history
+    
     const conversation = messages.map((msg, index) => 
       `${index % 2 === 0 ? "User" : "Bot"}: ${msg}`).join("\n");
 
