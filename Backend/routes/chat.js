@@ -22,7 +22,8 @@ router.post("/", async (req, res) => {
     const botResponse = result.response.text();
 
     return res.status(200).json({ response: botResponse });
-  } catch (error) {
+  } 
+  catch (error) {
     console.error("Error generating content:", error);
     return res.status(500).json({ message: "Failed to generate content" });
   }
