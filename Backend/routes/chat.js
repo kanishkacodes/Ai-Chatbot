@@ -9,9 +9,9 @@ router.post("/", async (req, res) => {
   
   const { messages } = req.body; 
   
-  if (!messages || !Array.isArray(messages)) {
+ if (!messages || !Array.isArray(messages)) {
     return res.status(400).json({ message: "Messages array is required" });
-  }
+  } 
 
   try {
     
